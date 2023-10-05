@@ -33,9 +33,13 @@ def printNodes(node, val=''):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
+
+    # List of all possible unicode characters
     chars = [chr(i) for i in range(sys.maxunicode)]
+    # List of random frequencies for all possible unicode characters
     freq = random.sample(range(sys.maxunicode+1), k = sys.maxunicode)
 
+    # Hard coded small list of characters for testing
     # chars = ['a', 'b', 'c', 'd', 'e', 'f']  # characters for Hoffman tree
     # freq = [5, 9, 12, 13, 16, 45]           # frequency of characters
 
@@ -65,9 +69,9 @@ if __name__ == '__main__':
 
             heapq.heappush(nodes, newNode)
         end_time = time.time()
-        #print(f"input size: n = {len(subChars)} takes {end_time - start_time} seconds")
-        print((end_time - start_time) * 1000)
+        print(f"input size: n = {len(subChars)} takes {end_time - start_time} seconds")
+        # print((end_time - start_time) * 1000)
         # printNodes(nodes[0])
 
-    # Hoffman Tree is ready!
-    # printNodes(nodes[0])
+    # Print Final Hoffman Tree
+    printNodes(nodes[0])
